@@ -22,11 +22,11 @@
           <button>Edit Data</button>
         </div>
         <%- include ('create'); %> 
-        <button onclick="window.location.href='/'"  id="back">Back</button>
+        <button class="btn-back" onclick="window.location.href='/'"  id="back">Back</button>
       </div>
 
-      <table class="table-wrapper" >
-        <tr>
+      <table class="table-wrapper" border="1px">
+        <tr class="thead-container">
           <th>#</th>
           <th>id</th>
           <th>Nama Menu</th>
@@ -45,7 +45,7 @@
           <td><%= data.harga_large %></td>
           <td>
             <form action="/delete/<%= data.id %>" method="post">
-              <button>Delete</button>
+              <button class="btn-delete">Delete</button>
             </form>
           </td>
         </tr>

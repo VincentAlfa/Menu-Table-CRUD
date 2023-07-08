@@ -10,6 +10,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-bottom: #EE3A43 3px solid;
 }
 
 img {
@@ -23,7 +24,7 @@ img {
 
 .wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-top: 2rem;
 }
@@ -51,29 +52,56 @@ img {
 }
 
 .table-wrapper{
-  border: #ffffff solid 5px;
+  border: #EE3A43 solid 3px;
   width: 800px;
   text-align: start;
   outline: #ffffff;
-  background-color: transparent;
+  border-collapse: collapse;
+  
 }
+
+.thead-container{
+  height: 2.5rem;
+}
+
 
 th{
   text-align: start;
+  background-color: #EE3A43;
+  color: #ffffff;
+}
+td{
+  height: 3rem;
 }
 
 .navigation-container a {
   text-decoration: none;
   color: black;
 }
-
-.delete-button{
-  border: none;
-  outline: none;
-
-}
-
 button{
   cursor: pointer;
+  border: 2px solid #EE3A43;
+  outline: none;
+  border-radius: 5px;
 }
+
+.btn-delete{
+  background-color: #EE3A43;
+  outline: none;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 5rem;
+  height: 2rem;
+  font-weight: 700;
+}
+
+.btn-add, .btn-back{
+  background-color: #EE3A43;
+  color: #ffffff;
+  width: 5rem;
+  height: 1.5rem;
+  margin-top: 7px;
+  margin-bottom: 2px;
+}
+
 
