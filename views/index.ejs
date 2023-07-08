@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsi Matematika Diskrit</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="/logo.svg" alt="logo" />
+      <h3>Sistem Manajemen Menu Pizza Hut</h3>
+    </header>
+    
+    <main class="wrapper">
+      <div class="left-row">
+        <div class="button-container">
+          <button onclick="addData()">Add Data</button>
+          <button>Edit Data</button>
+        </div>
+        <%- include ('create'); %> 
+        <button onclick="window.location.href='/'"  id="back">Back</button>
+      </div>
+
+      <table class="table-wrapper" >
+        <tr>
+          <th>#</th>
+          <th>id</th>
+          <th>Nama Menu</th>
+          <th>Personal</th>
+          <th>Reguler</th>
+          <th>Large</th>
+          <th>action</th>
+          
+        </tr>
+        <% datas.forEach((data,i) => { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= data.id %></td>
+          <td><%= data.nama_menu %></td>
+          <td><%= data.harga_personal %></td>
+          <td><%= data.harga_reguler %></td>
+          <td><%= data.harga_large %></td>
+          <td>
+            <form action="/delete/<%= data.id %>" method="post">
+              <button>Delete</button>
+            </form>
+            <button>Edit</button>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
