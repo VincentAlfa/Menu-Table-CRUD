@@ -28,39 +28,21 @@ app.get('/', (req, res) => {
 
 app.post('/submit', (req, res) => {
   const { nama_menu, harga_personal, harga_reguler, harga_large } = req.body;
-  const createData = `INSERT INTO menu_list (nama_menu, harga_personal, harga_reguler, harga_large) VALUES ('${nama_menu}', '${harga_personal}', '${harga_reguler}', ${harga_large})`;
-  connection.query(createData, (err, result) => {
+  const postData = `INSERT INTO menu_list (nama_menu, harga_personal, harga_reguler, harga_large) VALUES ('${nama_menu}', '${harga_personal}', '${harga_reguler}', ${harga_large})`;
+  connection.query(postData, (err, result) => {
     if (err) throw err;
     res.redirect('/');
   });
 });
 
-app.post('/delete', (req, res) => {
-  const { id_barang } = req.body;
-  const deleteData = `DELETE FROM menu_list WHERE id = ${id_barang}`;
-  connection.query(deleteData, (err, result) => {
-    if (err) throw err;
-    res.redirect('/');
-  });
-});
-
-app.post('/delete', (req, res) => {
+app.post('/delete/:id_barang', (req, res) => {
   const { id_barang } = req.params;
   const deleteData = `DELETE FROM menu_list WHERE id = ${id_barang}`;
   connection.query(deleteData, (err, result) => {
     if (err) throw err;
-    console.log('data deleted')
-    console.log(err.message)
     res.redirect('/');
   });
 });
-
-// app.post('/edit', (req, res) => {
-//   const {id_barang} = req.params;
-//   const { nama_menu, harga_personal, harga_reguler, harga_large } = req.body;
-//   const updateData = ``
-  
-// })
 
 app.listen(port, () => {
   console.log(`server running on port http://localhost:${port}`);
