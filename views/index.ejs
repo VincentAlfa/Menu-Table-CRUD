@@ -27,6 +27,7 @@
 
       <table class="table-wrapper" >
         <tr>
+          <th>#</th>
           <th>id</th>
           <th>Nama Menu</th>
           <th>Personal</th>
@@ -34,8 +35,9 @@
           <th>Large</th>
           <th>action</th>
         </tr>
-        <% datas.forEach(data => { %>
+        <% datas.forEach((data, i) => { %>
         <tr>
+          <td><%= i+1 %></td>
           <td><%= data.id %></td>
           <td><%= data.nama_menu %></td>
           <td><%= data.harga_personal %></td>
