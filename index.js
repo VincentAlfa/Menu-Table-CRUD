@@ -44,6 +44,15 @@ app.post('/delete/:id_barang', (req, res) => {
   });
 });
 
+app.post('/edit', (req, res) => {
+  const { id_barang, nama_menu, harga_personal, harga_reguler, harga_large } = req.body;
+  const editData = `UPDATE menu_list SET nama_menu = '${nama_menu}', harga_personal = ${harga_personal}, harga_reguler = ${harga_reguler}, harga_large = ${harga_large}  WHERE id = ${id_barang}`;
+  connection.query(editData, (err, result) => {
+    if (err) throw err;
+    res.redirect('/');
+  });
+});
+
 app.listen(port, () => {
   console.log(`server running on port http://localhost:${port}`);
 });

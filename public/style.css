@@ -64,6 +64,9 @@ img {
   height: 2.5rem;
 }
 
+th,td{
+  padding: 5px 10px;
+}
 
 th{
   text-align: start;
@@ -98,9 +101,9 @@ button{
 .btn-add, .btn-back{
   background-color: #EE3A43;
   color: #ffffff;
-  width: 5rem;
+  width: 10rem;
   height: 1.5rem;
-  margin-top: 7px;
+  margin-top: 10px;
   margin-bottom: 2px;
 }
 
