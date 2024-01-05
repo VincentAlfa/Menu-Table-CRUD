@@ -20,8 +20,7 @@
           <button onclick="addData()">Add Data</button>
           <button onclick="updateData()">Edit Data</button>
         </div>
-        <%- include ('create'); %> 
-        <%- include('update') %>
+        <%- include ('create'); %> <%- include('update') %>
         <button class="btn-back" onclick="window.location.href='/'" id="back">Back</button>
       </div>
       <table class="table-wrapper" border="1px">
@@ -35,7 +34,7 @@
           <th>action</th>
         </tr>
         <% datas.forEach((data, i) => { %>
-        <tr>
+        <tr class="tdata-container">
           <td><%= i+1 %></td>
           <td><%= data.id %></td>
           <td><%= data.nama_menu %></td>
@@ -43,9 +42,12 @@
           <td><%= data.harga_reguler %></td>
           <td><%= data.harga_large %></td>
           <td>
-            <form action="/delete/<%= data.id %>" method="post">
-              <button class="btn-delete">Delete</button>
-            </form>
+            <div class="button-wrapper">
+              <form action="/delete/<%= data.id %>" method="post">
+                <button class="btn-delete">Delete</button>
+              </form>
+              <button onclick="updateData()" class="btn-edit edit-btn" data-id="<%= data.id %>">Edit</button>
+            </div>
           </td>
         </tr>
         <% }) %>

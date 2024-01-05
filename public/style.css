@@ -41,6 +41,11 @@ img {
   margin-bottom: 1rem;
 }
 
+.button-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
 .button-container > button {
   margin-bottom: 1rem;
 }
