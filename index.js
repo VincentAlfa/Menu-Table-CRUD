@@ -18,7 +18,6 @@ connection.connect();
 
 app.get('/', (req, res) => {
   const getAll = 'SELECT * FROM `menu_list`';
-
   connection.query(getAll, (err, result) => {
     if (err) throw err;
     const data = JSON.parse(JSON.stringify(result));
