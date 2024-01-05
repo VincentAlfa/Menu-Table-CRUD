@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const editButtons = document.querySelectorAll('.edit-btn');
 
   editButtons.forEach((button) => {
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', (event) => {
       event.preventDefault();
       const id = this.dataset.id;
       history.pushState(null, null, `/edit/${id}`);
